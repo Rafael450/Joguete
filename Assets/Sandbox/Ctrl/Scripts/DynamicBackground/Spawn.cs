@@ -25,12 +25,13 @@ public class Spawn : MonoBehaviour
     }
 
     public void SpawnPiece(Vector3 position){
-        Color newColor = GlobalParameters.mainColors[Random.Range(0,4)];
-        //Sprite template = GlobalParameters.allTemplates[Random.Range(0,8)];
+        GlobalParameters global = GameObject.Find("GlobalValues").GetComponent<GlobalParameters>();
+        Color newColor = global.mainColors[Random.Range(0,4)];
+        Sprite template = global.allTemplates[Random.Range(0,6)];
         //Radial spawning for easy testing
         GameObject next = Instantiate(prefab, position, Quaternion.identity);
         next.GetComponent<SpriteRenderer>().color = newColor;
-        //next.GetComponent<SpriteRenderer>().sprite = template;
+        next.GetComponent<SpriteRenderer>().sprite = template;
         manager.AddPiece(next);
     }
 
