@@ -17,7 +17,7 @@ public class Piece : MonoBehaviour
 
     void ChoosePiece()
     {
-        if(turnos.dieResult != 0 && owner.tag == turnos.player.tag)
+        if(turnos.dieResult != 0 && time == turnos.player.tag)
         {
             moves = turnos.dieResult;
             turnos.dieResult = 0;

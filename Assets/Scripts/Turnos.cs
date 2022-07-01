@@ -9,11 +9,6 @@ public class Turnos : MonoBehaviour
     public List<GameObject> players = new List<GameObject>();
     public int dieResult = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void NextPlayer()
     {
