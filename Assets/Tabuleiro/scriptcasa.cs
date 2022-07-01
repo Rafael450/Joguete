@@ -38,9 +38,14 @@ public class scriptcasa : MonoBehaviour
 			if(movendo >= 0) {
 				Vector3 desl = proximo.transform.position - jogadoresAqui[movendo].transform.position;
 				desl = new Vector3(desl.x,desl.y,0);
+				if (proximo.GetComponent<geraLinha>() != null) {
+					//gerador de linha não fez o trabalho dele
+					proximo = proximo.GetComponent<geraLinha>().filhos[0];
+				}
+				
 				if (desl.magnitude > velocidade*Time.deltaTime) {
 					jogadoresAqui[movendo].transform.position += desl*velocidade*Time.deltaTime/desl.magnitude;
-				} else {
+				} else  {
 					jogadoresAqui[movendo].transform.position += desl;
 					proximo.GetComponent<scriptcasa>().Chegou(jogadoresAqui[movendo]);
 					jogadoresAqui.RemoveAt(movendo);

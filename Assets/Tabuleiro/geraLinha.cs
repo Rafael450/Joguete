@@ -9,7 +9,7 @@ public class geraLinha : MonoBehaviour
 	public Vector3 deslocamento;
 	public GameObject anterior;
 	public GameObject seguinte;
-	List<GameObject> filhos = new List<GameObject>();
+	public List<GameObject> filhos = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -24,24 +24,21 @@ public class geraLinha : MonoBehaviour
 			} else {
 				prev.GetComponent<geraLinha>().seguinte = curr;
 			}
-			//print("caso final");
 			prev = curr;
 		}
 		prev.GetComponent<scriptcasa>().proximo = seguinte;
-		if (prev.GetComponent<scriptcasa>() != null) {
+		if (seguinte.GetComponent<scriptcasa>() != null) {
 			seguinte.GetComponent<scriptcasa>().anterior = prev;
 		} else {
-			seguinte.GetComponent<geraLinha>().seguinte = prev;
+			seguinte.GetComponent<geraLinha>().anterior = prev;
 		}
 		
 		if (anterior.GetComponent<bifurcacao>() != null) {
 			bifurcacao antes = anterior.GetComponent<bifurcacao>();
 			if (antes.prox == gameObject) {
-				print("achei prox normal");
 				antes.prox = filhos[0];
 			}
 			if (antes.proxTime == gameObject) {
-				print("achei prox time");
 				antes.proxTime = filhos[0];
 			}
 		}
