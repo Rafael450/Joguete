@@ -17,6 +17,15 @@ public class scriptcasa : MonoBehaviour
 			movendo = jogadoresAqui.Count - 1;
 			player.GetComponent<Piece>().moves--;
 			if (GetComponent<bifurcacao>() != null) {GetComponent<bifurcacao>().Event(jogadoresAqui[movendo]);}
+		} else if (player.GetComponent<Piece>() != null && player.GetComponent<Piece>().moves == 0) {
+			for (int i = 0; i < jogadoresAqui.Count; i++) { 
+				if (jogadoresAqui[i].tag != jogadoresAqui[jogadoresAqui.Count-1].tag) {
+					jogadoresAqui[i].GetComponent<Piece>().moves = 1;
+					jogadoresAqui[i].GetComponent<Piece>().playerSpawn.GetComponent<scriptcasa>().Chegou(jogadoresAqui[i]);
+					jogadoresAqui.RemoveAt(i);
+					i--;
+				}
+			}
 		}
 	}
     // Start is called before the first frame update
@@ -24,6 +33,7 @@ public class scriptcasa : MonoBehaviour
         if (playerSpawn) {
 			Chegou(playerSpawn);
 			playerSpawn.transform.position = transform.position + new Vector3(0,0,playerSpawn.transform.position.z-transform.position.z);
+			playerSpawn.GetComponent<Piece>().playerSpawn = gameObject;
 		}
 		if (proximo) {
 			if (proximo.GetComponent<scriptcasa>()) {proximo.GetComponent<scriptcasa>().anterior = gameObject;}
