@@ -10,6 +10,7 @@ public class Piece : MonoBehaviour
     bool exited = false;
     public string time;
     public GameObject owner;
+    public GameObject playerSpawn;
     public int moves = 0;
 
     void Start()
@@ -21,13 +22,13 @@ public class Piece : MonoBehaviour
 
     void ChoosePiece()
     {
-        if(turnos.dieResult != 0 && time == turnos.player.tag && exited)
+        if(turnos.dieResult != 0 && owner.tag == turnos.player.tag && exited)
         {
             moves = turnos.dieResult;
             turnos.dieResult = 0;
             turnos.NextPlayer();
         }
-        else if(turnos.dieResult == 6 && time == turnos.player.tag && !exited)
+        else if(turnos.dieResult == 6 && owner.tag == turnos.player.tag && !exited)
         {
             exited = true;
             moves = 1;

@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - DynamicAnimPiece
+  - Turnos
+  - Red
+  - Blue
+  - Black
+  - Yellow
   layers:
   - Default
   - TransparentFX

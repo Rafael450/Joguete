@@ -25,8 +25,9 @@ public class Turnos : MonoBehaviour
         player = players[playerIndex];
     }
 
-    public void RollDie()
+    public int RollDie()
     {
         dieResult = Random.Range(1, 7);
+        return dieResult;
     }
 }
