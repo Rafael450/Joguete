@@ -6,7 +6,6 @@ using TMPro;
 public class Piece : MonoBehaviour 
 {
     Turnos turnos;
-    Sprite sprite_;
     bool exited = false;
     public string time;
     public GameObject owner;
@@ -17,22 +16,29 @@ public class Piece : MonoBehaviour
     {
         turnos = GameObject.FindWithTag("Turnos").GetComponent<Turnos>();
         owner = GameObject.FindWithTag(time);
-        // sprite_ = owner.GetComponent<Script>().sprite;
+        gameObject.GetComponent<SpriteRenderer>().sprite = owner.GetComponent<Dados>().avatar;
     }
 
     void ChoosePiece()
     {
+        print(time+1);
         if(turnos.dieResult != 0 && owner.tag == turnos.player.tag && exited)
         {
             moves = turnos.dieResult;
             turnos.dieResult = 0;
-            turnos.NextPlayer();
+            // turnos.NextPlayer();
         }
         else if(turnos.dieResult == 6 && owner.tag == turnos.player.tag && !exited)
         {
             exited = true;
             moves = 1;
+            // turnos.NextPlayer();
         }
+    }
+
+    void OnMouseDown()
+    {
+        ChoosePiece();
     }
 
 }

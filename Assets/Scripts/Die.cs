@@ -37,21 +37,22 @@ public class Die : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = currentSprite;
     }
 
-     private void Update()
+    private void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Throw();
+        // if (Input.GetMouseButtonDown(0))
+        // {
+        //     RaycastHit hit;
+        //     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit, 100.0f))
-            {
-                if (hit.transform != null)
-                {
-                    Throw();
-                }
-            }
-        }
+        //     if (Physics.Raycast(ray, out hit, 100.0f))
+        //     {
+        //         if (hit.transform != null)
+        //         {
+                    
+        //         }
+        //     }
+        // }
     }
 
 

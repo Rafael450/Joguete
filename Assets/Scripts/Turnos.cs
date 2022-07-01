@@ -12,6 +12,11 @@ public class Turnos : MonoBehaviour
 
     void Start()
     {
+        // players.Add(GameObject.FindWithTag("Blue"));
+        // players.Add(GameObject.FindWithTag("Red"));
+        // players.Add(GameObject.FindWithTag("Black"));
+        // players.Add(GameObject.FindWithTag("Yellow"));
+        player = players[playerIndex];
         dieScript = GameObject.Find("Die").GetComponent<Die>();
     }
 
@@ -28,6 +33,7 @@ public class Turnos : MonoBehaviour
     public int RollDie()
     {
         dieResult = Random.Range(1, 7);
+        NextPlayer();
         return dieResult;
     }
 }
