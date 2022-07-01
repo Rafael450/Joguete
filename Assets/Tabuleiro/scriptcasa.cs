@@ -44,7 +44,7 @@ public class scriptcasa : MonoBehaviour
     void Update()
     {
 		// Teste de movimento
-        if (jogadoresAqui.Count > 0 && jogadoresAqui[0].GetComponent<Piece>() != null && jogadoresAqui[0].GetComponent<Piece>().moves > 0) {
+        if (movendo == -1 && jogadoresAqui.Count > 0 && jogadoresAqui[0].GetComponent<Piece>() != null && jogadoresAqui[0].GetComponent<Piece>().moves > 0) {
 			movendo = 0;
 			//while (not)
 			if (GetComponent<bifurcacao>() != null) {GetComponent<bifurcacao>().Event(jogadoresAqui[movendo]);}
