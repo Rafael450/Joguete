@@ -47,6 +47,8 @@ ExportedObj/
 *.opendb
 *.VC.db
 
+CurrentMaximizeLayout.dwlt
+
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
