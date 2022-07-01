@@ -6,8 +6,14 @@ public class Turnos : MonoBehaviour
 {
     int playerIndex = 0;
     public GameObject player;
+    public Die dieScript;
     public List<GameObject> players = new List<GameObject>();
     public int dieResult = 0;
+
+    void Start()
+    {
+        dieScript = GameObject.Find("Die").GetComponent<Die>();
+    }
 
     public void NextPlayer()
     {

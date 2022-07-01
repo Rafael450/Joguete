@@ -6,13 +6,17 @@ using TMPro;
 public class Piece : MonoBehaviour 
 {
     Turnos turnos;
+    Sprite sprite_;
     bool exited = false;
     public string time;
+    public GameObject owner;
     public int moves = 0;
 
     void Start()
     {
         turnos = GameObject.FindWithTag("Turnos").GetComponent<Turnos>();
+        owner = GameObject.FindWithTag(time);
+        // sprite_ = owner.GetComponent<Script>().sprite;
     }
 
     void ChoosePiece()
