@@ -21,7 +21,7 @@ public class InitiateMenu : MonoBehaviour
         Botao1.SetTrigger("go");
         Botao2.SetTrigger("go");
         Botao3.SetTrigger("go"); //Os 3 botoes agora
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.8f);
 
         //Background aparece
         Background.SetTrigger("disappear");
