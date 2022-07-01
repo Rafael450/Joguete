@@ -13,6 +13,11 @@ public class scriptcasa : MonoBehaviour
 	public void Chegou(GameObject player) {
 		//print("chegou ok");
 		jogadoresAqui.Add(player);
+		if (player.GetComponent<Piece>() != null && player.GetComponent<Piece>().moves > 0) {
+			movendo = jogadoresAqui.Count - 1;
+			player.GetComponent<Piece>().moves--;
+			if (GetComponent<bifurcacao>() != null) {GetComponent<bifurcacao>().Event(jogadoresAqui[movendo]);}
+		}
 	}
     // Start is called before the first frame update
     void Start(){
@@ -29,10 +34,11 @@ public class scriptcasa : MonoBehaviour
     void Update()
     {
 		// Teste de movimento
-        if (Input.GetKeyDown("space") && jogadoresAqui.Count > 0) {
+        if (jogadoresAqui.Count > 0 && jogadoresAqui[0].GetComponent<Piece>() != null && jogadoresAqui[0].GetComponent<Piece>().moves > 0) {
 			movendo = 0;
 			//while (not)
 			if (GetComponent<bifurcacao>() != null) {GetComponent<bifurcacao>().Event(jogadoresAqui[movendo]);}
+			jogadoresAqui[0].GetComponent<Piece>().moves--;
 
 		} else {
 			if(movendo >= 0) {
