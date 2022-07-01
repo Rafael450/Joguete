@@ -10,6 +10,10 @@ TagManager:
   - Blue
   - Black
   - Yellow
+  - amarelo
+  - preto
+  - vermelho
+  - azul
   layers:
   - Default
   - TransparentFX
