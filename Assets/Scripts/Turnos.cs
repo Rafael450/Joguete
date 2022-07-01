@@ -9,7 +9,6 @@ public class Turnos : MonoBehaviour
     public List<GameObject> players = new List<GameObject>();
     public int dieResult = 0;
 
-
     public void NextPlayer()
     {
         playerIndex++;

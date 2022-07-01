@@ -5,8 +5,8 @@ using TMPro;
 
 public class Piece : MonoBehaviour 
 {
-
     Turnos turnos;
+    bool exited = false;
     public string time;
     public int moves = 0;
 
@@ -17,11 +17,16 @@ public class Piece : MonoBehaviour
 
     void ChoosePiece()
     {
-        if(turnos.dieResult != 0 && time == turnos.player.tag)
+        if(turnos.dieResult != 0 && time == turnos.player.tag && exited)
         {
             moves = turnos.dieResult;
             turnos.dieResult = 0;
             turnos.NextPlayer();
+        }
+        else if(turnos.dieResult == 6 && time == turnos.player.tag && !exited)
+        {
+            exited = true;
+            moves = 1;
         }
     }
 
