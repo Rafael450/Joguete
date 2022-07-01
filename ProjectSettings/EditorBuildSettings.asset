@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/tabuleiro.unity
     guid: 306e89f0a13f12f4baf13d42c2ac10dc
+  - enabled: 1
+    path: Assets/Sandbox/Sonar/Creditos.unity
+    guid: 1230cf5bd59ad434399b308f7909bad6
   m_configObjects: {}

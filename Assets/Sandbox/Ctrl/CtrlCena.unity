@@ -1354,7 +1354,7 @@ MonoBehaviour:
   m_text: Jogar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61307fcfd1548134098e8578a6a54d74, type: 2}
-  m_sharedMaterial: {fileID: 7077305735699016747, guid: 61307fcfd1548134098e8578a6a54d74, type: 2}
+  m_sharedMaterial: {fileID: -8002294780834577284, guid: 61307fcfd1548134098e8578a6a54d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2172,7 +2172,7 @@ MonoBehaviour:
   m_text: Creditos
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61307fcfd1548134098e8578a6a54d74, type: 2}
-  m_sharedMaterial: {fileID: 7077305735699016747, guid: 61307fcfd1548134098e8578a6a54d74, type: 2}
+  m_sharedMaterial: {fileID: -8002294780834577284, guid: 61307fcfd1548134098e8578a6a54d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3092,7 +3092,7 @@ MonoBehaviour:
   m_text: Sair
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61307fcfd1548134098e8578a6a54d74, type: 2}
-  m_sharedMaterial: {fileID: 7077305735699016747, guid: 61307fcfd1548134098e8578a6a54d74, type: 2}
+  m_sharedMaterial: {fileID: -8002294780834577284, guid: 61307fcfd1548134098e8578a6a54d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
